@@ -1,0 +1,47 @@
+**Dépendances Fonctionnelles :**
+
+1. Dépendance fonctionnelle sur les hôtels gérés par HCVL :
+   - Code identifiant de l'hôtel -> Nom de l'hôtel, Adresse (ville et rue), GPS, Nombre de chambres, Niveau de qualité (étoiles)
+
+2. Dépendance fonctionnelle sur les chambres d'un hôtel :
+   - Numéro de chambre -> Capacité d'accueil, Superficie
+
+3. Dépendance fonctionnelle sur les départements opérationnels d'un hôtel :
+   - Nom du département -> Directeur du département, Numéro de poste téléphonique
+
+4. Dépendance fonctionnelle sur l'attribution d'étoiles aux hôtels :
+   - Confort des équipements, Qualité des services, Bonnes pratiques en matière de respect de l'environnement et de l'accueil aux handicapés -> Niveau de qualité (étoiles) de l'hôtel
+
+5. Dépendance fonctionnelle sur les commandes de services par les clients :
+   - Chambre, Date et heure de la commande -> Nom du service demandé, Prix unitaire du service, Quantité, Paiement (payée ou à ajouter au montant du séjour)
+
+6. Dépendance fonctionnelle sur les personnes stockées dans la base :
+   - Numéro d'identité -> Nom, Adresse, Date de naissance
+   - Pour le personnel de l'hôtel : Numéro d'identité -> Fonction dans l'hôtel, Département opérationnel associé
+   - Pour les clients : Numéro d'identité -> Nationalité
+
+7. Dépendance fonctionnelle sur les réservations de chambres par les clients :
+   - Chambre, Date d'arrivée, Date de départ -> Prix, Nombre d'adultes, Nombre d'enfants
+
+Ces dépendances fonctionnelles représentent comment les différentes informations sont liées les unes aux autres dans le système d'informations que vous avez décrit.
+
+
+
+
+- Entités :
+  - Hôtel (Attributs : Code identifiant, Nom, Adresse, GPS, Nombre de chambres, Niveau de qualité)
+  - Chambre (Attributs : Numéro de chambre, Capacité d'accueil, Superficie)
+  - Département opérationnel (Attributs : Nom du département, Directeur, Numéro de poste téléphonique)
+  - Service (Attributs : Nom du service)
+  - Commande (Attributs : Date et heure de la commande, Prix unitaire, Quantité, Paiement)
+  - Personne (Attributs : Numéro d'identité, Nom, Adresse, Date de naissance, Nationalité, Fonction dans l'hôtel)
+  - Réservation (Attributs : Date d'arrivée, Date de départ, Prix, Nombre d'adultes, Nombre d'enfants)
+
+- Relations :
+  - Hôtel possède Chambre
+  - Hôtel a des Départements opérationnels
+  - Service est associé à Commande
+  - Commande est passée par Chambre
+  - Commande est passée à un Département opérationnel de l'Hôtel
+  - Personne fait partie du Personnel de l'Hôtel
+  - Réservation concerne une Chambre et une Personne (Client)
